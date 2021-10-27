@@ -1,8 +1,6 @@
-import datetime
 import string
 import itertools
 from timeit import default_timer as timer
-import time
 
 #This program brute forces a password
 
