@@ -80,7 +80,6 @@ def print_doors(doors, dont_open):
         print("|_| " * number_of_doors)
         for i in range(number_of_doors):
             print("{:^3.0f} ".format(i + 1), end="")
-    
     else:
         c_temp = "".join(chosen_door)
         r_temp = int(c_temp)
@@ -94,7 +93,6 @@ def print_doors(doors, dont_open):
         print("|_| " * number_of_doors)
         for i in range(number_of_doors):
             print("{:^3.0f} ".format(i + 1), end="")
-    print('')
 
 def main():
     seed = int(input("Set seed:\n"))
@@ -117,16 +115,17 @@ def main():
     q = int(dont_open[0])
     p = int(dont_open[1])
     print_doors(doors, dont_open)
-    print(f"{len(doors) - 2} certainly wrong doors were opened. The door number {q} was left.")
+    print(f"\n{len(doors) - 2} certainly wrong doors were opened. The door number {q} was left.")
 
     while True:
         dont_open = int(input(f"Choose {p} if you want to keep the door you first chose and choose {q} if you want to change the door.\n"))
-        j_i = dont_open
-        if 1 <= dont_open <= number_of_doors:
-            dont_open = [int(o) for o in str(dont_open)]
+        if p == dont_open or dont_open == q:
+            trr = dont_open
+            asddsa = str(dont_open)
+            yeee = list(asddsa.split(" "))
             break
 
-    print_doors(doors, dont_open)
+    print_doors(doors, yeee)
 
     doors_list = [i + 1 for i in range(len(doors))]
     doors_dict = {doors_list[i]: doors[i] for i in range(len(doors))}
@@ -134,9 +133,9 @@ def main():
     i_j = "".join(chosen_door)
     int_i_j = int(i_j)
 
-    if j_i == int_i_j:
-        print("Congratulations! The car was behind the door you chose!")
+    if trr == int_i_j:
+        print("\nCongratulations! The car was behind the door you chose!")
     else:
-        print("A goat emerged from the door you chose! The car was behind the other door :(")
+        print("\nA goat emerged from the door you chose! The car was behind the other door :(")
 
 main()
