@@ -1,4 +1,5 @@
-Ohjelman kulku
+- Ohjelman kulku
+
     1 Ohjelma pyytää käyttäjältä ovien lukumäärän ja luo lukumäärää vastaavan määrän ovia.
       - Lukumäärää pyydetään uudestaan niin kauan, että se on välillä 3-999.
       - Ovet numeroidaan luvuin 1 - [ovien_lkm] tulostusta ja pelaamista varten.
