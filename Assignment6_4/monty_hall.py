@@ -8,9 +8,12 @@ def amount_of_doors():
         print("The number of doors must be between 3-999!")
 
 def door_choice(number_of_doors):
+    print('')
     while True:
-        choice = int(input(f"\nChoose a door 1-{number_of_doors}.\n"))
-        if 1 <= choice <= number_of_doors:
+        choice = list(input(f"Choose a door 1-{number_of_doors}.\n"))
+        y = "".join(choice)
+        x = int(y)
+        if 1 <= x <= number_of_doors:
             return choice
         
 
@@ -25,48 +28,107 @@ def initialize_doors(number_of_doors):
 
 def remove_wrong_doors(chosen_door, doors):
     # Implement your code here
+
+    m = "".join(chosen_door)
+    f = int(m)
+
     doors_list = [i + 1 for i in range(len(doors))]
     doors_dict = {doors_list[i]: doors[i] for i in range(len(doors))}
-    chosen_value = doors_dict.get(chosen_door)
+    chosen_value = doors_dict.get(f)
     if chosen_value == True:
         while True:
-            x = random.randint(1, len(doors))
+            x = [random.randint(1, len(doors))]
             if x != chosen_value:
                 return x
             else:
-                 x = random.randint(1, len(doors))
+                x = [random.randint(1, len(doors))]
     if chosen_value == False:
-        i = [str(k) for k, v in doors_dict.items() if v == True]
-        a = "".join(i)
-        b = int(a)
-        return b
+        chosen_door = [str(k) for k, v in doors_dict.items() if v == True]
+        return chosen_door
 
 def print_doors(doors, dont_open):
     # Implement your code here
+
+    doors_list = [i + 1 for i in range(len(doors))]
+    doors_dict = {doors_list[i]: doors[i] for i in range(len(doors))}
+    chosen_door = [str(k) for k, v in doors_dict.items() if v == True]
+
     number_of_doors = len(doors)
-    if dont_open == 0:
+    if len(dont_open) >= 2:
+        w = int(dont_open[0])
+        v = int(dont_open[1])
+    elif len(dont_open) <=1:
+        w = int(chosen_door[0])
+
+    if len(dont_open) >= 3:
         print(" _  " * number_of_doors)
         print("| | " * number_of_doors)
         print("|_| " * number_of_doors)
         for i in range(number_of_doors):
             print("{:^3.0f} ".format(i + 1), end="")
-    
-    
-    pass
+    elif 3 > len(dont_open) >= 2:
+        print(" _  " * number_of_doors)
+        for i in range(1, number_of_doors + 1):
+            if i == v:
+                print("| | ", end="")
+            elif i == w:
+                print("| | ", end="")
+            else:
+                print("|G| ", end="")
+        print("")
+        print("|_| " * number_of_doors)
+        for i in range(number_of_doors):
+            print("{:^3.0f} ".format(i + 1), end="")
+    elif 2 > len(dont_open) >= 1:
+        print(" _  " * number_of_doors)
+        for i in range(1, number_of_doors + 1):
+            if i == w:
+                print("|C| ", end="")
+            else:
+                print("|G| ", end="")
+        print("")
+        print("|_| " * number_of_doors)
+        for i in range(number_of_doors):
+            print("{:^3.0f} ".format(i + 1), end="")
 
 def main():
     seed = int(input("Set seed:\n"))
     random.seed(seed)
     # Implement your code here
-    chosen_door = 0
+
     number_of_doors = amount_of_doors()
     doors = initialize_doors(number_of_doors)
-    print_doors(doors, chosen_door)
+
+    dont_open = [i + 1 for i in range(len(doors))]
+
+    print_doors(doors, dont_open)
     chosen_door = door_choice(number_of_doors)
-    print(f"You chose the door number {chosen_door}.\n")
-    wrong_door = remove_wrong_doors(chosen_door, doors)
-    print(wrong_door)
+    temp_number_f = "".join(chosen_door)
+    temp_number = int(temp_number_f)
+    print(f"You chose the door number {temp_number}.")
+    dont_open = remove_wrong_doors(chosen_door, doors)
+    k = "".join(chosen_door)
+    dont_open.append(k)
+    q = int(dont_open[0])
+    p = int(dont_open[1])
+    print_doors(doors, dont_open)
+    print(f"\n{len(doors) - 2} certainly wrong doors were opened. The door number {q} was left.")
 
+    while True:
+        dont_open = int(input(f"Choose {p} if you want to keep the door you first chose and choose {q} if you want to change the door.\n"))
+        if 1 <= dont_open <= number_of_doors:
+            dont_open = [int(o) for o in str(dont_open)]
+            break
 
+    print_doors(doors, dont_open)
+
+    doors_list = [i + 1 for i in range(len(doors))]
+    doors_dict = {doors_list[i]: doors[i] for i in range(len(doors))}
+    chosen_door = [str(k) for k, v in doors_dict.items() if v == True]
+
+    if chosen_door == dont_open:
+        print("\nCongratulations! The car was behind the door you chose!")
+    else:
+        print("\nA goat emerged from the door you chose! The car was behind the other door :(")
 
 main()
