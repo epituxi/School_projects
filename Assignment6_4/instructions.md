@@ -22,12 +22,15 @@
   import random
 
 def initialize_doors(number_of_doors):
+
     # Implement your code here
 
-def remove_wrong_doors(chosen_door, doors):
+ def remove_wrong_doors(chosen_door, doors):
+
     # Implement your code here
 
 def print_doors(doors, dont_open):
+
     # Implement your code here
 
 def main():
