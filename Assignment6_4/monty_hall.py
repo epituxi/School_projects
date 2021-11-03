@@ -25,9 +25,21 @@ def initialize_doors(number_of_doors):
 
 def remove_wrong_doors(chosen_door, doors):
     # Implement your code here
-
-    
-    pass
+    doors_list = [i + 1 for i in range(len(doors))]
+    doors_dict = {doors_list[i]: doors[i] for i in range(len(doors))}
+    chosen_value = doors_dict.get(chosen_door)
+    if chosen_value == True:
+        while True:
+            x = random.randint(1, len(doors))
+            if x != chosen_value:
+                return x
+            else:
+                 x = random.randint(1, len(doors))
+    if chosen_value == False:
+        i = [str(k) for k, v in doors_dict.items() if v == True]
+        a = "".join(i)
+        b = int(a)
+        return b
 
 def print_doors(doors, dont_open):
     # Implement your code here
@@ -38,7 +50,7 @@ def print_doors(doors, dont_open):
         print("|_| " * number_of_doors)
         for i in range(number_of_doors):
             print("{:^3.0f} ".format(i + 1), end="")
-
+    
     
     pass
 
@@ -49,10 +61,12 @@ def main():
     chosen_door = 0
     number_of_doors = amount_of_doors()
     doors = initialize_doors(number_of_doors)
-    door_printer = print_doors(doors, chosen_door)
+    print_doors(doors, chosen_door)
     chosen_door = door_choice(number_of_doors)
     print(f"You chose the door number {chosen_door}.\n")
-    remove_wrong_doors(chosen_door, doors)
+    wrong_door = remove_wrong_doors(chosen_door, doors)
+    print(wrong_door)
+
 
 
 main()
