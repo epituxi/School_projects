@@ -1,21 +1,21 @@
 Ohjelman kulku
-  1 Ohjelma pyytää käyttäjältä ovien lukumäärän ja luo lukumäärää vastaavan määrän ovia.
-    - Lukumäärää pyydetään uudestaan niin kauan, että se on välillä 3-999.
-    - Ovet numeroidaan luvuin 1 - [ovien_lkm] tulostusta ja pelaamista varten.
-  2 Ohjelma pyytää käyttäjää valitsemaan jonkin ovista.
-    - Ohjelma pyytää käyttäjältä valintaa uudestaan, kunnes valinta on välillä 1 - [ovien lkm].
-  3 Ohjelma avaa jäljelle jääneistä ovista [ovien lkm] - 2 varmasti väärää ovea, eli paljastaa mitä kyseisten ovien takana on (kaikkien takana on varmasti vuohi).
-    - Jos käyttäjä on valinnut väärän oven, ohjelma avaa kaikki loput väärät ovet. Jäljelle jää siis tällöin käyttäjän valitsema ovi ja ovi, jonka takana on auto.
-    - Jos käyttäjä on valinnut oikean oven, ohjelma jättää satunnaisen oven jäljelle.
-    - Käyttäjä ei voi enää valita avattuja ovia.
-  4 Ohjelma kysyy käyttäjältä haluaako hän vaihtaa ovea.
-    - Käyttäjä voi valita pitävänsä alkuperäisen valitansa tai hän voi vaihtaa oven toiseen avaamattomaan oveen.
-    - Käyttäjä valitsee alkuperäisen oven numeron, jos hän haluaa pitää alkuperäisen valintansa, ja toisen oven numeron, jos hän haluaa vaihtaa valintaansa.
-    - Ohjelma kysyy valintaa uudelleen, kunnes käyttäjä syöttää jomman kumman avaamattoman oven numeron.
-  5 Ohjelma paljastaa minkä oven takana auto on.
-    - Jos auto on käyttäjän edellisessä vaiheessa valitseman oven takana, ohjelma tulostaa "Congratulations! The car was behind the door you chose!"
-    - Jos auto on toisen oven takana (eli käyttäjän valitseman oven takana on vuohi), ohjelma tulostaa "A goat emerged from the door you chose! The car was behind the other door :("
-  6 Ohjelman suoritus päättyy.
+    1 Ohjelma pyytää käyttäjältä ovien lukumäärän ja luo lukumäärää vastaavan määrän ovia.
+      - Lukumäärää pyydetään uudestaan niin kauan, että se on välillä 3-999.
+      - Ovet numeroidaan luvuin 1 - [ovien_lkm] tulostusta ja pelaamista varten.
+    2 Ohjelma pyytää käyttäjää valitsemaan jonkin ovista.
+      - Ohjelma pyytää käyttäjältä valintaa uudestaan, kunnes valinta on välillä 1 - [ovien lkm].
+    3 Ohjelma avaa jäljelle jääneistä ovista [ovien lkm] - 2 varmasti väärää ovea, eli paljastaa mitä kyseisten ovien takana on (kaikkien takana on varmasti vuohi).
+      - Jos käyttäjä on valinnut väärän oven, ohjelma avaa kaikki loput väärät ovet. Jäljelle jää siis tällöin käyttäjän valitsema ovi ja ovi, jonka takana on auto.
+      - Jos käyttäjä on valinnut oikean oven, ohjelma jättää satunnaisen oven jäljelle.
+      - Käyttäjä ei voi enää valita avattuja ovia.
+    4 Ohjelma kysyy käyttäjältä haluaako hän vaihtaa ovea.
+      - Käyttäjä voi valita pitävänsä alkuperäisen valitansa tai hän voi vaihtaa oven toiseen avaamattomaan oveen.
+      - Käyttäjä valitsee alkuperäisen oven numeron, jos hän haluaa pitää alkuperäisen valintansa, ja toisen oven numeron, jos hän haluaa vaihtaa valintaansa.
+      - Ohjelma kysyy valintaa uudelleen, kunnes käyttäjä syöttää jomman kumman avaamattoman oven numeron.
+    5 Ohjelma paljastaa minkä oven takana auto on.
+      - Jos auto on käyttäjän edellisessä vaiheessa valitseman oven takana, ohjelma tulostaa "Congratulations! The car was behind the door you chose!"
+      - Jos auto on toisen oven takana (eli käyttäjän valitseman oven takana on vuohi), ohjelma tulostaa "A goat emerged from the door you chose! The car was behind the other door :("
+    6 Ohjelman suoritus päättyy.
   
   
   Ohjelman rakenne
