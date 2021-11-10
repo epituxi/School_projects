@@ -32,5 +32,5 @@ def main():
     salasana = password()
     answer, time_end, time_start = solver(salasana)
     time_elapsed = time_end - time_start
-    print("The program found inputted password {} in {:.2f} seconds.".format(answer, time_elapsed))
+    print("The program found the password {} in {:.2f} seconds.".format(answer, time_elapsed))
 main()
