@@ -20,7 +20,7 @@ def main():
     try:
         temp_file = open(food_file, "r")
         #Creates a dictionary of all the vitamins in the file with error checks
-        for line in temp_file:
+        for line in temp_file: 
             line = line.rstrip()
 
             try:
