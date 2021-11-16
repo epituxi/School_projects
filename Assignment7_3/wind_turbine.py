@@ -32,7 +32,6 @@ def vel_lst(tempfile):
 def calculate_powers(velocities_list):
 
     power_lst = []
-    p_max = 3450000
 
     for i in range(len(velocities_list)):
         if 3 <= velocities_list[i] <= 25:
